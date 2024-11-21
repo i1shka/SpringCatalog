@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    .product {
+    background: #f0f0f0;
+    margin: 30px 0px;
+    }
+    .product input, button {
+    padding: 10px;
+    margin: 10px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+<form action="add_product" class="product">
+  <input name="name" placeholder="Название" required>
+  <input name="category" placeholder="Категория" required>
+  <input name="price" placeholder="Цена" required>
+  <button>Добавить</button>
+</form>
+<p><b th:text="${message}"></b></p>
+<p><b th:text="${errorMsg}"></b></p>
+<p><a href="/catalog">Просмотреть каталог</a></p>
+</body>
+</html>

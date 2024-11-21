@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    .cat {border-collapse: collapse;
+    width: 60%;
+    }
+    .cat th, td {
+    width: 300px;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-collapse: collapse;
+    }
+    .cat tr:nth-child(2n) {
+    background: #f0f0f0;
+    }
+    form {
+    padding: 10px;
+    margin: 10px;
+    display:inline-block;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+<table class="cat">
+    <tr><th>Название</th><th>Категория</th><th>Цена</th></tr>
+    <tr th:each="row:${list}"><td th:text="${row.name}"></td><td th:text="${row.category}"></td><td th:text="${row.price}"></td></tr>
+</table>
+<form action="save" method="post"><button>Сохранить</button></form>
+<form action="load" method="post"><button>Загрузить</button></form>
+<p><b th:text="${message}"></b></p>
+<p><a href="/">Добавить товар</a></p>
+</body>
+</html>
