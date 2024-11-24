@@ -21,16 +21,16 @@
 </style>
 <head>
     <meta charset="UTF-8">
-    <title>Catalog</title>
+    <title>Каталог</title>
 </head>
 <body>
 <table class="cat">
     <tr><th>Название</th><th>Категория</th><th>Цена</th></tr>
-    <tr th:each="row:${list}"><td th:text="${row.name}"></td><td th:text="${row.category}"></td><td th:text="${row.price}"></td></tr>
+    <tr th:each="row:${list}"><td><a th:href="@{product(id=${row.id})}" th:text="${row.name}"></a></td><td th:text="${row.category}"></td><td th:text="${row.price}"></td></tr>
 </table>
 <form action="save" method="post"><button>Сохранить</button></form>
 <form action="load" method="post"><button>Загрузить</button></form>
 <p><b th:text="${message}"></b></p>
-<p><a href="/">Добавить товар</a></p>
+<p><a href="/add_product">Добавить товар</a></p>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    .product {
+        background: #f0f0f0;
+        margin: 30px 0px;
+        padding: 30px;
+        }
+        .product input, button, textarea {
+        padding: 10px;
+        margin: 10px;
+        display:block;
+        }
+        .product textarea {
+        width: 300px;
+        height: 200px;
+        }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать товар</title>
+</head>
+<body>
+<form action="edit_prod" class="product">
+  <input name="name" placeholder="Название" required th:value="${prod.name}">
+  <input name="category" placeholder="Категория" required th:value="${prod.category}">
+  <input name="price" type="number" placeholder="Цена" required th:value="${prod.price}">
+  <textarea name="description" placeholder="Описание" th:text="${prod.description}"></textarea>
+  <button name="id" th:value="${prod.id}">Применить</button>
+</form>
+<p><a th:href="@{product(id=${prod.id})}">Обратно к карточке товара</a></p>
+</body>
+</html>

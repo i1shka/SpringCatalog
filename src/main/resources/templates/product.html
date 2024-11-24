@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    p {padding: 10px 30px;}
+
+    form {
+    padding: 10px;
+    margin: 10px;
+    display:inline-block;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Страница товара</title>
+</head>
+<body>
+<h1 th:text="${prod.name}"></h1>
+<p th:text="${prod.description}"></p>
+<p>Цена: <span th:text="${prod.price}"></span></p>
+<form action="edit" class="product"><button name="id" th:value="${prod.id}">Редактировать</button></form>
+<form action="delete" class="product"><button name="id" th:value="${prod.id}">Удалить</button></form>
+<p><b th:text="${message}"></b></p>
+<p><a href="/catalog">В каталог</a> </p>
+</body>
+</html>

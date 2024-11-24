@@ -15,7 +15,7 @@ public class SpringCatalogApplication {
 
 	@GetMapping("/")
 	public String index(){
-		return "add_product";
+		return "redirect:/catalog";
 	}
 
 }
